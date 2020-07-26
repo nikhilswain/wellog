@@ -1,3 +1,9 @@
-# Register - Login
+#Wellog
 
-in this i have done both the registration and the login part after registration with validation
+welcome and register or login here 
+all the details will be saved in monogDB database
+
+validation is done by using passport.js 
+
+
+Use this as a boiler plate if you wish to
