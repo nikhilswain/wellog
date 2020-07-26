@@ -1,0 +1,48 @@
+<link href="../public/main.css" rel="stylesheet" />
+<div class="container">
+  <form class="d-flex flex-column justify-content-center" action="/user/signup" method="POST">
+    <div class="d-flex flex-column p-3 w-50 ml-auto mr-auto">
+      <h1>signup form</h1>
+      <%- include('./partials/msg'); %>
+      <label for="username">user name</label>
+      <input
+        class="pl-2"
+        name="username"
+        type="text"
+        placeholder="e.g chrissy"
+        value="<%= typeof username != 'undefined' ? username : '' %>"
+      />
+      <label for="email" class="m-0">Email</label>
+      <input
+        class="pl-2"
+        id="email"
+        name="email"
+        type="email"
+        placeholder="chrissycos@xyz.com"
+        value="<%= typeof email != 'undefined' ? email : '' %>"
+      />
+      <label for="password" class="m-0">password</label>
+      <input
+        class="pl-2"
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+        value="<% typeof password != 'undefined' ? password : ''%>"
+      />
+      <label for="cnfpassword" class="m-0">Confirm password</label>
+      <input
+        class="pl-2"
+        type="password"
+        name="cnfpassword"
+        id="cnfpassword"
+        placeholder="password"
+        value="<% typeof cnfpassword != 'undefined' ? cnfpassword : ''%>"
+      />
+    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-around w-50 ml-auto mr-auto">
+      <button type="submit" class="btn btn-outline-primary">signup</button>
+      <button onclick="document.location.href='/user/login';" type="button" class="btn btn-outline-primary">login instead</button>
+    </div>
+  </form>
+</div>
