@@ -51,7 +51,7 @@ const db = require('./config/connection').MongoURI;
 
 // connecting to MongoDB
 mongoose
-  .connect(db || process.env.db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect( process.env.db || db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('MongoDB connected');
   })
