@@ -47,11 +47,11 @@ app.use((req, res, next) => {
 });
 
 // MongoDB config
-const db = require('./config/connection').MongoURI;
+const db = process.env.MongoURI || require('./config/connection').MongoURI;
 
 // connecting to MongoDB
 mongoose
-  .connect( process.env.db || db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect( db, { useNewUrlParser: true, useUnifiedTopology: true, useMongoClient:true})
   .then(() => {
     console.log('MongoDB connected');
   })
