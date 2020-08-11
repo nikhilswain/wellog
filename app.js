@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+require('dotenv').config();
 const app = express();
 
 // set public folder
@@ -55,6 +56,7 @@ mongoose
     console.log('MongoDB connected');
   })
   .catch((err) => console.log(err));
+
 
 // welcome page route
 app.use('/', require('./routes/welcome'));
